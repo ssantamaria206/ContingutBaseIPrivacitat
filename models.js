@@ -43,4 +43,7 @@ class Serie extends Multimedia {
         self.#Views += 1;
         return ("Martó de" , self.Titol , "iniciada")
     };
+    calcularRoyalties(self){
+        return (self.#Views * self.Capitols * 0.05);
+    };
 };

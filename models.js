@@ -21,10 +21,14 @@ class Multimedia {
     };
 };
 class Pelicula extends Multimedia {
-    constructor(Any,CostFix) {
-    super();
+    #Views;
+    constructor(Titol, Durada, Any, CostFix){
+    super(Titol, Durada)
     this.Any = Any;
-    this.CostFix = CostFix
+    this.CostFix = CostFix;
+    this.#Views = 0;
     };
-
+    calcularRoyalties(self){
+        return (self.#Views * costFix);
+    };
 };

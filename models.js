@@ -20,3 +20,11 @@ class Multimedia {
         return (Durada * 0.01)
     };
 };
+class Pelicula extends Multimedia {
+    constructor(Any,CostFix) {
+    super();
+    this.Any = Any;
+    this.CostFix = CostFix
+    };
+
+};

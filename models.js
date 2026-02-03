@@ -32,3 +32,11 @@ class Pelicula extends Multimedia {
         return (self.#Views * costFix);
     };
 };
+class Serie extends Multimedia {
+    #Views;
+    constructor(Titol, Durada, Capitols){
+    super(Titol, Durada)
+    this.Capitols = Capitols
+    this.#Views = 0;
+    };
+};

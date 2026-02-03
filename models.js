@@ -23,10 +23,10 @@ class Multimedia {
 class Pelicula extends Multimedia {
     #Views;
     constructor(Titol, Durada, Any, CostFix){
-    super(Titol, Durada)
-    this.Any = Any;
-    this.CostFix = CostFix;
-    this.#Views = 0;
+        super(Titol, Durada)
+        this.Any = Any;
+        this.CostFix = CostFix;
+        this.#Views = 0;
     };
     calcularRoyalties(self){
         return (self.#Views * costFix);
@@ -35,9 +35,9 @@ class Pelicula extends Multimedia {
 class Serie extends Multimedia {
     #Views;
     constructor(Titol, Durada, Capitols){
-    super(Titol, Durada)
-    this.Capitols = Capitols
-    this.#Views = 0;
+        super(Titol, Durada)
+        this.Capitols = Capitols
+        this.#Views = 0;
     };
     Play(self){
         self.#Views += 1;
@@ -45,5 +45,20 @@ class Serie extends Multimedia {
     };
     calcularRoyalties(self){
         return (self.#Views * self.Capitols * 0.05);
+    };
+};
+class Usuari {
+    constructor(MyList){
+        this.MyList = MyList
+    };
+    AfegirALlista(item){
+        self.MyList.push(item)        
+    };
+    tempsTotalConsumit(){
+        let total = 0
+        for (var i = 0; i < length.MyList; i++){
+            total += MyList[i].Durada
+        };
+        return (total / 60)
     };
 };

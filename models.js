@@ -39,4 +39,8 @@ class Serie extends Multimedia {
     this.Capitols = Capitols
     this.#Views = 0;
     };
+    Play(self){
+        self.#Views += 1;
+        return ("Martó de" , self.Titol , "iniciada")
+    };
 };

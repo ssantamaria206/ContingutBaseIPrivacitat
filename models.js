@@ -1,5 +1,5 @@
+export { Multimedia, Pelicula, Serie, Usuari };
 class Multimedia {
-    #calcularCostServer;
     #Views;
     constructor(Titol, Durada) {
         this.Titol = Titol;
@@ -7,29 +7,30 @@ class Multimedia {
         this.#Views = 0;
         }
     
-    Play(self){
+    play(){
         console.log("Reproduint...")
-        self.#Views += 1;
+        this.#Views += 1;
     };
 
-    getViews(self){
-        return self.#Views;
+    getViews(){
+        let views = this.#Views
+        return (views);
     };
 
-    #calcularCostServer(self,Durada){
-        return (Durada * 0.01)
+    #calcularCostServer(Durada){
+        return (Durada * 0.01);
     };
 };
 class Pelicula extends Multimedia {
     #Views;
     constructor(Titol, Durada, Any, CostFix){
         super(Titol, Durada)
-        this.Any = Any;
+        this.Any = Any
         this.CostFix = CostFix;
         this.#Views = 0;
     };
-    calcularRoyalties(self){
-        return (self.#Views * costFix);
+    calcularRoyalties(){
+        return (this.getViews() * this.CostFix);
     };
 };
 class Serie extends Multimedia {
@@ -39,12 +40,15 @@ class Serie extends Multimedia {
         this.Capitols = Capitols
         this.#Views = 0;
     };
-    Play(self){
-        self.#Views += 1;
-        return ("Martó de" , self.Titol , "iniciada")
+    play(){
+        this.#Views += 1;
+        return ("Martó de" , this.Titol , "iniciada");
     };
-    calcularRoyalties(self){
-        return (self.#Views * self.Capitols * 0.05);
+    calcularRoyalties(){
+        return (this.#Views * this.Capitols * 0.05);
+    };
+    durada(){
+        return (this.Durada * this.Capitols);
     };
 };
 class Usuari {
@@ -52,13 +56,14 @@ class Usuari {
         this.MyList = MyList
     };
     AfegirALlista(item){
-        self.MyList.push(item)        
+        this.MyList.push(item)        
     };
     tempsTotalConsumit(){
         let total = 0
         for (var i = 0; i < length.MyList; i++){
             total += MyList[i].Durada
         };
-        return (total / 60)
+        return (total / 60);
     };
 };
+
